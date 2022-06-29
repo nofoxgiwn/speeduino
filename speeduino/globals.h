@@ -1056,6 +1056,8 @@ struct config6 {
   byte ego_sdelay;  /// Time in seconds after engine starts that closed loop becomes available
   byte egoRPM;      /// RPM must be above this for closed loop to function
   byte egoTPSMax;   /// TPS must be below this for closed loop to function
+  byte egoMaxMapDot;
+  byte egoMaxTpsDot;
   byte vvt1Pin : 6;
   byte useExtBaro : 1;
   byte boostMode : 1; /// Boost control mode: 0=Simple (BOOST_MODE_SIMPLE) or 1=full (BOOST_MODE_FULL)

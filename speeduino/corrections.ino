@@ -592,9 +592,18 @@ This continues until either:
 PID (Best suited to wideband sensors):
 
 */
+bool isAFRClosedLoopDotThresholdReached() {
+  return (currentStatus.mapDOT > configPage6.egoMaxMapDot ||
+  currentStatus.tpsDOT > configPage6.egoMaxTpsDot);  
+}
+
 byte correctionAFRClosedLoop()
 {
   byte AFRValue = 100;
+
+  if(isAFRClosedLoopDotThresholdReached()) {
+    return AFRValue;
+  }
   
   if( (configPage6.egoType > 0) || (configPage2.incorporateAFR == true) ) //afrTarget value lookup must be done if O2 sensor is enabled, and always if incorporateAFR is enabled
   {
