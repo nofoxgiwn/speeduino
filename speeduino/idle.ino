@@ -740,6 +740,10 @@ void idleControl()
       IDLE_TIMER_ENABLE();
     }
   }
+
+  if(currentStatus.MAP > 100) {
+    disableIdle();
+  }
 }
 
 
