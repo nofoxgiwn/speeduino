@@ -798,7 +798,7 @@ struct config2 {
   byte hardCutType : 1;
   byte ignAlgorithm : 3;
   byte indInjAng : 1;
-  byte injOpen;     ///< Injector opening time (ms * 10)
+  byte injOpen;     ///< Injector opening time (ms * 50)
   uint16_t injAng[4];
 
   //config1 in ini
