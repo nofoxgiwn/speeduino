@@ -100,7 +100,7 @@ uint16_t correctionsFuel()
   currentStatus.batCorrection = correctionBatVoltage();
   if (configPage2.battVCorMode == BATTV_COR_MODE_OPENTIME)
   {
-    inj_opentime_uS = (configPage2.injOpen * currentStatus.batCorrection * 10) / 4; // Apply voltage correction to injector open time.
+    inj_opentime_uS = (configPage2.injOpen * currentStatus.batCorrection) / 4; // Apply voltage correction to injector open time.
     currentStatus.batCorrection = 100; // This is to ensure that the correction is not applied twice. There is no battery correction fator as we have instead changed the open time
   }
   if (configPage2.battVCorMode == BATTV_COR_MODE_WHOLE)
