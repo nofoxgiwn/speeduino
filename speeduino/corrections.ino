@@ -593,8 +593,8 @@ PID (Best suited to wideband sensors):
 
 */
 bool isAFRClosedLoopDotThresholdReached() {
-  return (currentStatus.mapDOT > configPage6.egoMaxMapDot ||
-  currentStatus.tpsDOT > configPage6.egoMaxTpsDot);  
+  return (currentStatus.mapDOT > 100 ||
+  currentStatus.tpsDOT > 100);  
 }
 
 byte correctionAFRClosedLoop()

@@ -1123,8 +1123,6 @@ struct config6 {
   byte fanHyster;         // Fan hysteresis
   byte fanFreq;           // Fan PWM frequency
   byte fanPWMBins[4];     //Temperature Bins for the PWM fan control
-  byte egoMaxMapDot;
-  byte egoMaxTpsDot;
 
 #if defined(CORE_AVR)
   };
